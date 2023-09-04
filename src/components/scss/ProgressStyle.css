@@ -82,7 +82,7 @@
   align-items: center;
 }
 .graph-container div.graph-holder .skill li:nth-child(0) {
-  background: rgba(90, 105, 111, 0.1);
+  background: rgba(84, 32, 51, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -100,16 +100,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(0)::before {
-  background-color: rgba(90, 105, 111, 0.8);
+  background-color: rgba(84, 32, 51, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(0):hover::after {
   opacity: 1;
-  background-color: rgba(90, 105, 111, 0.8);
+  background-color: rgba(84, 32, 51, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(1) {
-  background: rgba(57, 122, 14, 0.1);
+  background: rgba(126, 225, 63, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -127,16 +127,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(1)::before {
-  background-color: rgba(57, 122, 14, 0.8);
+  background-color: rgba(126, 225, 63, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(1):hover::after {
   opacity: 1;
-  background-color: rgba(57, 122, 14, 0.8);
+  background-color: rgba(126, 225, 63, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(2) {
-  background: rgba(194, 250, 71, 0.1);
+  background: rgba(50, 212, 108, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -154,16 +154,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(2)::before {
-  background-color: rgba(194, 250, 71, 0.8);
+  background-color: rgba(50, 212, 108, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(2):hover::after {
   opacity: 1;
-  background-color: rgba(194, 250, 71, 0.8);
+  background-color: rgba(50, 212, 108, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(3) {
-  background: rgba(117, 247, 180, 0.1);
+  background: rgba(74, 56, 187, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -181,16 +181,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(3)::before {
-  background-color: rgba(117, 247, 180, 0.8);
+  background-color: rgba(74, 56, 187, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(3):hover::after {
   opacity: 1;
-  background-color: rgba(117, 247, 180, 0.8);
+  background-color: rgba(74, 56, 187, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(4) {
-  background: rgba(61, 108, 226, 0.1);
+  background: rgba(207, 22, 180, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -208,16 +208,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(4)::before {
-  background-color: rgba(61, 108, 226, 0.8);
+  background-color: rgba(207, 22, 180, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(4):hover::after {
   opacity: 1;
-  background-color: rgba(61, 108, 226, 0.8);
+  background-color: rgba(207, 22, 180, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(5) {
-  background: rgba(23, 127, 100, 0.1);
+  background: rgba(61, 34, 114, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -235,16 +235,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(5)::before {
-  background-color: rgba(23, 127, 100, 0.8);
+  background-color: rgba(61, 34, 114, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(5):hover::after {
   opacity: 1;
-  background-color: rgba(23, 127, 100, 0.8);
+  background-color: rgba(61, 34, 114, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(6) {
-  background: rgba(129, 96, 154, 0.1);
+  background: rgba(23, 101, 37, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -262,16 +262,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(6)::before {
-  background-color: rgba(129, 96, 154, 0.8);
+  background-color: rgba(23, 101, 37, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(6):hover::after {
   opacity: 1;
-  background-color: rgba(129, 96, 154, 0.8);
+  background-color: rgba(23, 101, 37, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(7) {
-  background: rgba(26, 5, 185, 0.1);
+  background: rgba(248, 77, 222, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -289,16 +289,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(7)::before {
-  background-color: rgba(26, 5, 185, 0.8);
+  background-color: rgba(248, 77, 222, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(7):hover::after {
   opacity: 1;
-  background-color: rgba(26, 5, 185, 0.8);
+  background-color: rgba(248, 77, 222, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(8) {
-  background: rgba(13, 39, 235, 0.1);
+  background: rgba(151, 58, 95, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -316,16 +316,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(8)::before {
-  background-color: rgba(13, 39, 235, 0.8);
+  background-color: rgba(151, 58, 95, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(8):hover::after {
   opacity: 1;
-  background-color: rgba(13, 39, 235, 0.8);
+  background-color: rgba(151, 58, 95, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(9) {
-  background: rgba(248, 70, 61, 0.1);
+  background: rgba(128, 156, 161, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -343,16 +343,16 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(9)::before {
-  background-color: rgba(248, 70, 61, 0.8);
+  background-color: rgba(128, 156, 161, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(9):hover::after {
   opacity: 1;
-  background-color: rgba(248, 70, 61, 0.8);
+  background-color: rgba(128, 156, 161, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }
 .graph-container div.graph-holder .skill li:nth-child(10) {
-  background: rgba(107, 134, 224, 0.1);
+  background: rgba(85, 126, 95, 0.1);
   box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
   padding: 0px 3px;
 }
@@ -370,11 +370,11 @@
   z-index: 1111;
 }
 .graph-container div.graph-holder .skill li:nth-child(10)::before {
-  background-color: rgba(107, 134, 224, 0.8);
+  background-color: rgba(85, 126, 95, 0.8);
 }
 .graph-container div.graph-holder .skill li:nth-child(10):hover::after {
   opacity: 1;
-  background-color: rgba(107, 134, 224, 0.8);
+  background-color: rgba(85, 126, 95, 0.8);
   transform: translateX(-50%) translateY(0%);
   rotate: 720deg;
 }

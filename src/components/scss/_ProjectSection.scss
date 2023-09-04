@@ -1,0 +1,42 @@
+/*Project CSS Start*/
+section.project {
+  min-height: 100vh;
+  height: 150vh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(rgb(32, 0, 50), rgb(125, 62, 188));
+
+  &::before {
+    content: "Projects";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    @include text-style(800%, rgba(250, 252, 255, 0.514), $lilita);
+    @include responsive-font(500%, 450%, 300%);
+    letter-spacing: 5px;
+    user-select: none;
+    z-index: 1;
+  }
+  .project-container {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5rem 0rem;
+    z-index: 11111111;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    @media screen and (max-width: $breakpoint-md) {
+      & {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+/*Project Section CSS End*/
