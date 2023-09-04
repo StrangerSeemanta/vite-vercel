@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import { Fragment, useState } from 'react'
 import Codepen from './Codepen'
 import Article from './Common/Article';
 import Card from './Common/Card';
@@ -39,15 +39,7 @@ function About() {
 
     ]
 
-    const [updatedCards, setUpdatedCards] = useState(cards);
 
-    const handleCardClick = (index: number) => {
-        const newCards = [...updatedCards]
-        newCards[1] = updatedCards[index];
-        newCards[index] = updatedCards[1];
-        setUpdatedCards(newCards);
-
-    }
     return (
         <Fragment>
             <section id='about' className='about'  >
@@ -74,7 +66,7 @@ function About() {
                 </div>
 
                 <div className="container flex-container card-container" >
-                    {updatedCards.map((item, index) => (
+                    {cards.map((item, index) => (
                         <div
                             key={index}
                             className={activeCard === index ? "active card-wrapper" : "card-wrapper"}

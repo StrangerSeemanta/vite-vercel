@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode } from 'react'
+import { Fragment, ReactNode } from 'react'
 import "./../scss/ProjectCard.css"
 interface ProjectCardProps {
     cardTitle: string;

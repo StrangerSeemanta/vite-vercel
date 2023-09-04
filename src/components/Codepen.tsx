@@ -1,28 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 interface Props {
     animate: boolean;
     children: string;
 }
 function Codepen({ animate, children }: Props) {
-    const id = "demo"; // Add the ID you want to use
     const [isPlayin, setPlay] = useState(false)
     const element = useRef<HTMLDivElement | null>(null);
-
     useEffect(() => {
-        let timer;
-
         if (animate) {
-            var i = 0;
-            var txt = children;
-            var speed = 15;
-            function typeWriter() {
+
+            let i = 0;
+            const txt = children;
+            const speed = 15;
+            const typeWriter = () => {
+
                 if (!isPlayin) {
                     setPlay(true);
                     if (element.current) {
                         if (i < txt.length) {
                             element.current.innerHTML += txt.charAt(i);
                             i++;
-                            timer = setTimeout(typeWriter, speed);
+                            setTimeout(typeWriter, speed);
                         }
                     }
                 } else {

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import ProjectTexture from './ProjectTexture'
 import ProjectGallery from './ProjectGallery';
 function Projects() {
@@ -11,7 +11,7 @@ function Projects() {
         if (!hideTexture) {
             window.addEventListener('scroll', function () {
                 if (scale <= 14) {
-                    setTransformVal(`translate3d(${x -= 2}px, ${y += 10}px, ${z += 12}px) scale(${scale += 0.1}) rotateX(${rotate - 1}deg)`)
+                    setTransformVal(`translate3d(${x -= 2}px, ${y += 10}px, ${z += 12}px) scale(${scale += 0.1}) rotateX(${rotate -= 1}deg)`)
                 } else {
                     setHideTexture(true);
                     setTransformVal(defaultTransform);

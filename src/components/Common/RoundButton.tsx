@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import AosProps from './AosProps';
 import "./../scss/RoundButton.css"
 interface Props {

@@ -95,7 +95,6 @@ class NavCollapseEffect {
 
     init() {
         const scrollArr: number[] = [];
-        const nav = this;
 
         window.addEventListener('scroll', () => {
             scrollArr.push(window.scrollY);

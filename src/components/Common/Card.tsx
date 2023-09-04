@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Link, { LinkProps } from './Link';
 import AosProps from './AosProps';
 import "./../scss/Card.css"

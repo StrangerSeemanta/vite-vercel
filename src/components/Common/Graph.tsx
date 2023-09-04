@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import "./../scss/ProgressStyle.css";
 
 export interface GraphsObject {
@@ -34,7 +34,7 @@ function Graph({ GraphData }: GraphsObject) {
 
                     <div className="percent">
                         <ul>
-                            {Array.from({ length: 11 }).map((item, index) => (
+                            {Array.from({ length: 11 }).fill(" ").map((item, index) => (
                                 <li key={index}>
                                     {`${100 - index * 10}%`}
                                 </li>

@@ -1,4 +1,3 @@
-import React from 'react'
 import "./../scss/MuskBtn.css"
 import AosProps from './AosProps';
 interface MuskBtnProps {

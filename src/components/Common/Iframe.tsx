@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 import RoundButton from './RoundButton'
 export interface IframeProps {
     onCloseBtnCLick?: () => void;

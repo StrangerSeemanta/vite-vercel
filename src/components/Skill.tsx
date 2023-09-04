@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Fragment, useState } from 'react'
 import Graph from './Common/Graph'
 import RoundButton from './Common/RoundButton'
 import MuskBtn from './Common/MuskBtn'
@@ -46,7 +46,7 @@ function Skill() {
     const [graphIndex, setGraphIndex] = useState(0)
     const prevGraph = () => {
         if (graphIndex > 0) {
-            let i = graphIndex - 1;
+            const i = graphIndex - 1;
             setGraphIndex(i)
         } else {
             setGraphIndex(Graphs.length - 1)
@@ -54,7 +54,7 @@ function Skill() {
     }
     const nextGraph = () => {
         if (graphIndex < Graphs.length - 1) {
-            let i = graphIndex + 1;
+            const i = graphIndex + 1;
             setGraphIndex(i)
         } else {
             setGraphIndex(0);

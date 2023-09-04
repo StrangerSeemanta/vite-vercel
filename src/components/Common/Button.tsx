@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react'
 import AosProps from './AosProps';
 import "./../scss/ButtonDefault.css"
 interface Props {
