@@ -4,6 +4,8 @@ import Intro from './components/Intro';
 import About from './components/About';
 import Skill from './components/Skill';
 import Projects from './components/Projects';
+
+import logo from "./assets/logo.png"
 import './App.css';
 
 
@@ -14,7 +16,7 @@ function App() {
     window.location.href = `#${item.toLocaleLowerCase()}`
   }
   const logoDetails = {
-    src: '/src/assets/logo.png',
+    src: logo,
     altText: "Logo.png"
   }
 

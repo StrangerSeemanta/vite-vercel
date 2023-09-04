@@ -3,6 +3,10 @@ import Codepen from './Codepen'
 import Article from './Common/Article';
 import Card from './Common/Card';
 
+import EducardImage from "./../assets/educard.jpg"
+import WorkExpImage from "./../assets/workExp.jpg"
+import CertificateImage from "./../assets/certificate.jpg"
+
 function About() {
     const [isWriteAbout, setWriteAbout] = useState(false);
     const [activeCard, setActiveCard] = useState(-1);
@@ -12,7 +16,7 @@ function About() {
         <Card
             className='eduCard'
             heading='My Education'
-            image='/src/assets/eduCard.jpg'
+            image={EducardImage}
             bottom_link={{ link: "#", children: "Full Education Chart" }}
             aos={{ data: "slide-right", easing: "ease-out-cubic", duration: "1000" }}
         >
@@ -22,7 +26,7 @@ function About() {
         <Card
             className='workCard'
             heading='Work experiences'
-            image='/src/assets/workExp.jpg'
+            image={WorkExpImage}
             bottom_link={{ link: "#", children: "In Details" }}
             aos={{ data: "slide-right", easing: "ease-out-cubic", duration: "2000", delay: "500" }}
         >
@@ -30,7 +34,7 @@ function About() {
         </Card>,
         <Card
             className='certificateCard'
-            heading='Certifications'
+            heading={CertificateImage}
             image='/src/assets/certificate.jpg'
             aos={{ data: "slide-right", easing: "ease-out-cubic", duration: "2000", delay: "1000" }}
         >
