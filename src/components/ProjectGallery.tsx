@@ -3,6 +3,8 @@ import Button from './Common/Button';
 import ProjectCard from './Common/ProjectCard';
 import Iframe, { IframeProps } from './Common/Iframe';
 
+import Loader from '../Loader';
+
 import thumbnail from "./../assets/side.jpg";
 function ProjectGallery() {
     const [showIframe, setIframeVisible] = useState(false);
@@ -15,9 +17,10 @@ function ProjectGallery() {
         setIframeVisible(true);
         setFrameData({ src: src, frameTitle: frameTitle });
     }
+    const [loadGallery, setLoadStat] = useState(false);
     return (
         <Fragment>
-            <section id='projectGallery' className="project">
+            <section onLoad={() => { setLoadStat(true) }} id='projectGallery' className="project">
                 <div className='container project-container'>
                     <ProjectCard thumbnail={thumbnail} cardTitle='Bank Website Dummy' buttonsArr={[
                         <Button children='Study More' />,
@@ -51,6 +54,8 @@ function ProjectGallery() {
                 {showIframe && <Iframe frameTitle={frameData.frameTitle} onCloseBtnCLick={closeIframe} src={frameData.src}></Iframe>}
 
             </section>
+
+            {loadGallery && <Loader />}
         </Fragment>
     )
 }
