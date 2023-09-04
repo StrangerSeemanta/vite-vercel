@@ -1,8 +1,11 @@
 import "./Loader.css";
-function Loader() {
+interface props {
+    className?: string;
+}
+function Loader({ className }: props) {
     return (
         <>
-            <div className="app-loader"></div>
+            <div className={className ? className + " app-loader" : " app-loader"}></div>
         </>
     )
 }

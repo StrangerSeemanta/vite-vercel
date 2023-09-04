@@ -21,6 +21,7 @@ body {
   color: white;
   @include space-bg();
   @include text-style(17px, black, $default_font);
+  position: relative;
 }
 
 div.container {

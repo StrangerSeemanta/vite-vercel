@@ -32,7 +32,7 @@ function App() {
         <Skill />
         <Projects />
       </section>
-      {appLoaderShow && <Loader />}
+      {appLoaderShow && <Loader className='fixed' />}
     </Fragment >
   )
 }

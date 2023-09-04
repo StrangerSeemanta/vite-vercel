@@ -1,5 +1,6 @@
 import { Fragment, ReactNode } from 'react'
 import "./../scss/ProjectCard.css"
+
 interface ProjectCardProps {
     cardTitle: string;
     children: string;
@@ -22,6 +23,7 @@ function ProjectCard({ cardTitle, children, buttonsArr, thumbnail }: ProjectCard
                     ))}
                 </div>
             </div>
+
         </Fragment>
     )
 }

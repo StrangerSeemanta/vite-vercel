@@ -1,16 +1,18 @@
 .app-loader {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: black;
   z-index: 11111111111;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.app-loader.fixed {
+  position: fixed !important;
+}
 .app-loader::before {
   content: " ";
   width: 150px;
