@@ -33,8 +33,8 @@ function About() {
             My working experices are too simple and straightforward. I have worked on a digital it firm "Bangladesh IT Gen" for 2 years as a front-end web developer and UI/UX designer. The learning curve during my job was so high. I learnt how to manage team work and contribute knowledge. The working period was 2021~2023. Now I want move and explore more oppertunities from inside and outside of my country.
         </Card>,
         <Card
-            className='certificateCard'
-            heading={CertificateImage}
+            className={CertificateImage}
+            heading='Certifications'
             image='/src/assets/certificate.jpg'
             aos={{ data: "slide-right", easing: "ease-out-cubic", duration: "2000", delay: "1000" }}
         >
