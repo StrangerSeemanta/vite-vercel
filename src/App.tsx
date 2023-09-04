@@ -1,9 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Navbar from './components/Navbar';
 import Intro from './components/Intro';
 import About from './components/About';
 import Skill from './components/Skill';
 import Projects from './components/Projects';
+
+import Loader from './Loader';
 
 import logo from "./assets/logo.png"
 import './App.css';
@@ -19,15 +21,18 @@ function App() {
     src: logo,
     altText: "Logo.png"
   }
-
+  const [appLoaderShow, setAppLoaderStat] = useState(true);
 
   return (
     <Fragment>
-      <Navbar logo={logoDetails} links={links} onSelected={handleNavClick} />
-      <Intro />
-      <About />
-      <Skill />
-      <Projects />
+      <section onLoad={() => { setAppLoaderStat(false) }}>
+        <Navbar logo={logoDetails} links={links} onSelected={handleNavClick} />
+        <Intro />
+        <About />
+        <Skill />
+        <Projects />
+      </section>
+      {appLoaderShow && <Loader />}
     </Fragment >
   )
 }

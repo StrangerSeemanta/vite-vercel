@@ -1,4 +1,4 @@
-import ppp from "./../../public/ppp.jpg"
+import ppp from "./../assets/ppp.jpg"
 import Article from './Common/Article';
 function Intro() {
 
