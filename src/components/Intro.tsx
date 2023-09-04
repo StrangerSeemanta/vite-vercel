@@ -1,3 +1,4 @@
+import ppp from "./../../public/ppp.jpg"
 import Article from './Common/Article';
 function Intro() {
 
@@ -13,7 +14,7 @@ function Intro() {
                     </Article>
 
                     <div className="img-holder">
-                        <img src="/public/ppp.jpg" alt="" />
+                        <img src={ppp} alt="" />
                     </div>
                 </div>
 
