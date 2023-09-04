@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Intro from './components/Intro';
 import About from './components/About';
@@ -10,7 +10,8 @@ import Loader from './Loader';
 import logo from "./assets/logo.png"
 import './App.css';
 
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 function App() {
 
   const links = ['Home', "About", "Skill", "Projects", "Contact"];
@@ -22,7 +23,12 @@ function App() {
     altText: "Logo.png"
   }
   const [appLoaderShow, setAppLoaderStat] = useState(true);
-
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-back",
+      duration: 2000,
+    });
+  }, [])
   return (
     <Fragment>
       <section onLoad={() => { setAppLoaderStat(false) }}>
