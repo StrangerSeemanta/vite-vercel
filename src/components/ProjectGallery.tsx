@@ -2,6 +2,8 @@ import { Fragment, useState } from 'react'
 import Button from './Common/Button';
 import ProjectCard from './Common/ProjectCard';
 import Iframe, { IframeProps } from './Common/Iframe';
+
+import thumbnail from "./../assets/side.jpg";
 function ProjectGallery() {
     const [showIframe, setIframeVisible] = useState(false);
     const [frameData, setFrameData] = useState({} as IframeProps)
@@ -17,7 +19,7 @@ function ProjectGallery() {
         <Fragment>
             <section id='projectGallery' className="project">
                 <div className='container project-container'>
-                    <ProjectCard thumbnail='/src/assets/side.jpg' cardTitle='Bank Website Dummy' buttonsArr={[
+                    <ProjectCard thumbnail={thumbnail} cardTitle='Bank Website Dummy' buttonsArr={[
                         <Button children='Study More' />,
                         <Button children='Live Demo ' handleClick={() => {
                             showFrame({ src: "https://strangerseemanta.github.io/bankweb/", frameTitle: "Bank Website Dummy" })
@@ -26,7 +28,7 @@ function ProjectGallery() {
                         This is first website
                     </ProjectCard>
 
-                    <ProjectCard thumbnail='/src/assets/side.jpg' cardTitle='Animated Website' buttonsArr={[
+                    <ProjectCard thumbnail={thumbnail} cardTitle='Animated Website' buttonsArr={[
                         <Button children='Study More' />,
                         <Button children='Live Demo ' handleClick={() => {
                             showFrame({ src: "https://strangerseemanta.github.io/animated/", frameTitle: "Animated Website" })
@@ -36,7 +38,7 @@ function ProjectGallery() {
                     </ProjectCard>
 
 
-                    <ProjectCard thumbnail='/src/assets/side.jpg' cardTitle='Crazy Cock' buttonsArr={[
+                    <ProjectCard thumbnail={thumbnail} cardTitle='Crazy Cock' buttonsArr={[
                         <Button children='Study More' />,
                         <Button children='Live Demo ' handleClick={() => {
                             showFrame({ src: "https://strangerseemanta.github.io/crypto_website_demo/", frameTitle: "Crazy Cock" })
