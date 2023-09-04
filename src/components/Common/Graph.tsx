@@ -25,6 +25,7 @@ function Bar({ percent, children }: any) {
 }
 
 function Graph({ GraphData }: GraphsObject) {
+    const percentage = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     return (
         <Fragment>
             <div data-aos="slide-right" className="graph-container">
@@ -34,8 +35,8 @@ function Graph({ GraphData }: GraphsObject) {
 
                     <div className="percent">
                         <ul>
-                            {Array.from({ length: 11 }).fill(" ").map((item, index) => (
-                                <li key={index}>
+                            {percentage.map((item, index) => (
+                                <li key={item}>
                                     {`${100 - index * 10}%`}
                                 </li>
                             ))}
