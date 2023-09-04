@@ -1,0 +1,38 @@
+&::after {
+  content: "Thanks";
+  z-index: 1111;
+  position: absolute;
+  transition: all linear 250ms;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform-style: preserve-3d;
+  text-shadow: 0px 0px 10px rgb(200, 25, 25), -5px 10px 10px black;
+  text-indent: 2000;
+  @include make-flex(center, false);
+  background-color: transparent;
+  text-align: center;
+  @include text-style(2.5rem, rgba(255, 255, 255, 0.637), $poppins);
+  font-weight: 700;
+  opacity: 0;
+}
+&::before {
+  content: "Thanks";
+  z-index: 1111;
+  position: absolute;
+  transition: all linear 250ms;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform-style: preserve-3d;
+  text-shadow: 0px 0px 10px rgb(200, 25, 25), -5px 10px 10px black;
+  text-indent: 2000;
+  @include make-flex(center, false);
+  background-color: transparent;
+  text-align: center;
+  @include text-style(2.5rem, rgba(255, 255, 255, 0.637), $poppins);
+  font-weight: 700;
+  opacity: 0;
+}

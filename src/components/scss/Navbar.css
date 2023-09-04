@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lilita+One&family=Poppins:wght@100;300;400;500;600;700;900&family=VT323&display=swap");
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 111111111111;
+  top: 0;
+  left: 0;
+  height: 15vh;
+  background-color: transparent;
+  transition: all linear 250ms;
+}
+header.collapse {
+  background: rgba(48, 3, 82, 0.611);
+  height: 10vh;
+  color: white; /* Set text color to be visible on dark background */
+}
+header.collapse nav div.brand-container img {
+  transform: translateX(-40px);
+  scale: 0.7;
+}
+header.collapse nav div.menu-container {
+  scale: 0.8;
+}
+header.hidden {
+  transform: translateY(-15vh);
+}
+header.hidden nav div.menu-container ul.mobile-menu {
+  display: none !important;
+  visibility: hidden !important;
+}
+header nav {
+  width: 100%;
+  height: 100%;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+header nav div.brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  gap: 10px;
+  font-size: 20px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Lilita One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+header nav div.brand-container img {
+  width: 140px;
+  height: 70px;
+}
+header nav div.menu-container {
+  width: 40%;
+  /*expanded menu css end*/
+}
+@media screen and (max-width: 992px) {
+  header nav div.menu-container {
+    width: auto;
+  }
+}
+header nav div.menu-container div.humberg-btn:not(.hide) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  display: none !important;
+  width: 50px;
+  height: 40px;
+  font-size: 18px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Lilita One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all linear 250ms;
+  gap: 0px;
+}
+@media screen and (max-width: 992px) {
+  header nav div.menu-container div.humberg-btn:not(.hide) {
+    display: flex !important;
+  }
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span {
+  width: 60%;
+  height: 2px;
+  transition: all linear 500ms;
+  background-color: white;
+  display: block;
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span:nth-child(1) {
+  background-color: yellow;
+  transform: translate(0, -8px);
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span:nth-child(1).active {
+  background-color: white;
+  transform: translate(0, 4px) rotate(45deg);
+  transform-origin: center;
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span:nth-child(2) {
+  background-color: red;
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span:nth-child(2).active {
+  transform: translateX(400px);
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span:nth-child(3) {
+  transform: translate(0, 8px);
+}
+header nav div.menu-container div.humberg-btn:not(.hide) span:nth-child(3).active {
+  transform: translate(0px, 0px) rotate(315deg);
+  transform-origin: center;
+}
+header nav div.menu-container ul.expanded-menu:not(.hide) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  width: 100%;
+  padding: 0 10px;
+}
+header nav div.menu-container ul.expanded-menu:not(.hide) li {
+  font-size: 20px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Lilita One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  width: 100%;
+  margin-right: 10px;
+  font-weight: 500;
+  padding: 8px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all linear 250ms;
+  position: relative;
+}
+header nav div.menu-container ul.expanded-menu:not(.hide) li:hover:not(.active) {
+  scale: 1.2;
+  color: rgb(0, 235, 219);
+}
+header nav div.menu-container ul.expanded-menu:not(.hide) li:hover:not(.active)::before {
+  width: calc(100% - 18px);
+}
+header nav div.menu-container ul.expanded-menu:not(.hide) li.active {
+  font-weight: 700;
+  color: greenyellow;
+}
+header nav div.menu-container ul.expanded-menu:not(.hide) li::before {
+  content: " ";
+  position: absolute;
+  bottom: 0%;
+  left: 8px;
+  width: 0%;
+  height: 4px;
+  background-color: rgb(0, 235, 219);
+  transition: all linear 250ms;
+}
+@media screen and (max-width: 992px) {
+  header nav div.menu-container ul.expanded-menu {
+    /*expanded menu hide on mobile*/
+    display: none !important;
+  }
+}
+header nav div.menu-container ul.mobile-menu:not(.hide) {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transition: all linear 250ms;
+  padding: 10px 0px;
+  top: 10vh;
+  left: 0;
+  background-color: rgba(48, 3, 82, 0.611);
+  opacity: 1;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+header nav div.menu-container ul.mobile-menu:not(.hide).collapse {
+  width: 0px;
+  visibility: hidden;
+}
+header nav div.menu-container ul.mobile-menu:not(.hide) li {
+  display: block;
+  margin-bottom: 10px;
+  width: 60px;
+  font-size: 19px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  cursor: pointer;
+  transition: all linear 250ms;
+}
+header nav div.menu-container ul.mobile-menu:not(.hide) li:hover:not(.active) {
+  scale: 1.2;
+  color: rgb(0, 235, 219);
+}
+header nav div.menu-container ul.mobile-menu:not(.hide) li:hover:not(.active)::before {
+  width: false;
+}
+header nav div.menu-container ul.mobile-menu:not(.hide) li.active {
+  font-weight: 700;
+  color: greenyellow;
+}
+@media screen and (min-width: 992px) {
+  header nav div.menu-container ul.mobile-menu {
+    width: 0px;
+    visibility: hidden;
+  }
+}
+header .hide {
+  display: none;
+}/*# sourceMappingURL=Navbar.css.map */

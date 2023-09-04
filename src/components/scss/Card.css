@@ -1,0 +1,88 @@
+.card {
+  width: 24rem;
+  height: 26rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px 5px rgba(17, 144, 8, 0.2);
+}
+.card img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: all 0.25s linear;
+  filter: brightness(0.9) blur(0px);
+}
+.card .cardHead {
+  position: absolute;
+  inset: auto auto 30px 30px;
+  margin: 0;
+  transition: inset 0.3s 0.01s ease-out;
+  font-size: 27px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card .cardBody,
+.card a {
+  position: absolute;
+  opacity: 0;
+  max-width: 80%;
+  transition: opacity 0.3s ease-out;
+  font-size: 15px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: left;
+  inset: auto auto 88px 30px;
+}
+.card a {
+  inset: auto auto 30px 30px;
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 14px;
+  border: 2px solid rgb(11, 109, 11);
+  font-size: 14px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.card a:hover {
+  background-color: rgb(11, 109, 11);
+}
+.card:hover .cardHead {
+  inset: auto auto 240px 30px;
+  transition: inset 0.5s ease-out;
+  color: rgb(18, 233, 18);
+}
+.card:hover .cardBody, .card:hover a {
+  opacity: 1;
+  transition: all 0.6s 0.1s ease-in;
+}
+.card:hover img {
+  transition: all 0.3s linear;
+  opacity: 1;
+  filter: brightness(0.3) blur(5px);
+}/*# sourceMappingURL=Card.css.map */

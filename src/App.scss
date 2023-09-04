@@ -1,0 +1,310 @@
+@use "./components/animation/glitch.scss" as Glitch;
+@use "./components/scss/MuskBtn.scss" as Musk;
+
+@import "./components/scss/variables&mixins";
+@import "./components/scss/iframe";
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  color: white;
+  @include space-bg();
+  @include text-style(17px, black, $default_font);
+}
+
+div.container {
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1rem;
+  &.flex-container {
+    @include make-flex(space-between, false);
+  }
+}
+
+div.text-container {
+  width: auto;
+  article {
+    color: white;
+    div.ArticleHead {
+      width: 100%;
+
+      h1 {
+        margin: 0.5rem 0;
+        font-weight: 700;
+        @include text-style(40px, white, $lilita);
+      }
+    }
+
+    div.ArticleChilds {
+      width: 100%;
+    }
+  }
+}
+
+section.intro-section {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100vh;
+  height: 100vh;
+  @include space-bg();
+  .main {
+    padding: 15vh 0px;
+    height: 100%;
+    div.container {
+      height: auto;
+      justify-content: space-between;
+      div.text-container {
+        width: auto !important;
+        article {
+          h1 {
+            user-select: none;
+            font-size: 800%;
+            color: white;
+            text-rendering: optimizeLegibility;
+            width: auto;
+            &:nth-child(1):hover {
+              @include Glitch.glitch-animation();
+            }
+            &:nth-child(2):hover {
+              @include Glitch.glitch-animation();
+            }
+
+            @include responsive-font(500%, 450%, 400%);
+          }
+          p.designation {
+            color: white;
+            font-size: 100%;
+            @include responsive-font(90%, 60%, 50%);
+          }
+          p span {
+            color: red;
+          }
+        }
+      }
+
+      .img-holder {
+        position: relative;
+
+        width: 350px;
+        height: 400px;
+        background-color: transparent;
+        padding: 0rem;
+        overflow: visible;
+        transition: all linear 250ms;
+        box-shadow: -8px 6px 10px black, -8px -10px 20px black,
+          0px 0px 80px $green_color_shade;
+        perspective: 2500px;
+        transform-style: preserve-3d;
+        transform-origin: top;
+        @media screen and (max-width: $breakpoint-md) {
+          scale: 0.7;
+        }
+        @media screen and (max-width: $breakpoint-sm) {
+          scale: 0.65;
+        }
+        @media screen and (max-width: $breakpoint-xs) {
+          scale: 0.5;
+        }
+        &:hover {
+          box-shadow: none;
+          img {
+            transform: perspective(800px) translateY(-30px) rotateX(20deg);
+            box-shadow: 8px 6px 10px black, 8px -10px 20px black,
+              10px 10px 80px $green_color_shade;
+            filter: brightness(0.4) grayscale(0.8);
+          }
+
+          &::before {
+            transform: perspective(800px) translate3d(00%, -50%, 300px)
+              rotate(0deg);
+            opacity: 1;
+          }
+        }
+
+        &::before {
+          content: url("./assets/4AIB.gif");
+          z-index: 1111;
+          position: absolute;
+          transition: all linear 300ms;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          object-fit: contain;
+          overflow: hidden;
+          background-size: contain;
+          transform-style: preserve-3d;
+          @include make-flex(center, false);
+          background-color: transparent;
+          opacity: 0;
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all linear 200ms;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+}
+.container {
+  img.float-image {
+    width: 50%;
+    height: 70%;
+  }
+}
+// Intro Section End
+
+// About Me Section Start
+/*About Section CSS START*/
+
+section.about {
+  @include space-bg();
+  padding: 8rem 0;
+  .container {
+    div.text-container {
+      @include make-flex(center, false);
+      article {
+        .ArticleHead {
+          width: 100%;
+          h1 {
+            width: auto;
+            @include text-style(600%, $green_color_primary, $cursive2);
+            &:hover {
+              @include Glitch.glitch-animation();
+            }
+            @include responsive-font(400%, 350%, 200%);
+          }
+        }
+        h2 {
+          width: auto;
+        }
+      }
+    }
+
+    text-align: center;
+
+    .codepen-holder {
+      width: 80%;
+      margin: 50px auto;
+      height: 50vh;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .codepen {
+        width: 100%;
+        height: auto;
+
+        padding: 0px 30px;
+        padding-bottom: 10px;
+        letter-spacing: 4px;
+        border-left: 3px solid red;
+        @include text-style(17px, $green_color_primary, monospace);
+        text-transform: capitalize;
+        text-align: left;
+        background-color: transparent;
+        // box-shadow: 0px 0px 5px rgba(38, 40, 39, 0.623),
+        //   0px 0px 25px rgba(53, 54, 53, 0.759);
+        scale: 0.9;
+      }
+    }
+  }
+
+  .card-container {
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    .card-wrapper {
+      transition: all linear 250ms;
+      scale: 1.2;
+      cursor: zoom-out !important;
+    }
+    .card-wrapper:not(.active) {
+      scale: 0.8;
+      cursor: zoom-in !important;
+    }
+    .eduCard {
+      &:hover .cardHead {
+        inset: auto auto 260px 30px;
+      }
+    }
+    .workCard {
+      &:hover .cardHead {
+        inset: auto auto 340px 30px;
+      }
+    }
+  }
+}
+/*About  Section CSS End*/
+
+/*Skill Section CSS START*/
+section.skillSection {
+  position: relative;
+  padding: 1rem;
+  min-height: 100vh;
+  background: linear-gradient(rgb(122, 25, 220), rgb(26, 2, 52));
+}
+/*Skill Section CSS End*/
+// uncommmited
+/*Project CSS Start*/
+section.project {
+  min-height: 100vh;
+  height: 150vh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(rgb(32, 0, 50), rgb(125, 62, 188));
+
+  &::before {
+    content: "Projects";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    @include text-style(800%, rgba(250, 252, 255, 0.514), $lilita);
+    @include responsive-font(500%, 450%, 300%);
+    letter-spacing: 5px;
+    user-select: none;
+    z-index: 1;
+  }
+  .project-container {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5rem 0rem;
+    z-index: 11111111;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    @media screen and (max-width: $breakpoint-md) {
+      & {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+/*Project Section CSS End*/

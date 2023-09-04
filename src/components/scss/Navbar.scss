@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+@import "./variables&mixins";
+// Fonts And Variables
+$default_font: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+$poppins: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+$lilita: "Lilita One", cursive;
+// Nav Details
+$nav_height: 15vh;
+$nav_color: rgba(16, 14, 14, 0.595);
+
+// Make Responsive when screen is :
+$responsive_width: $breakpoint-md;
+
+// Functions
+$glassColor: rgba(48, 3, 82, 0.611);
+
+@mixin make-flex($justify, $flexBreak) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  @if ($flexBreak) {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+  gap: 5px;
+}
+@mixin link-hover($transition, $underScoreWidth) {
+  cursor: pointer;
+  transition: $transition;
+  &:hover:not(.active) {
+    scale: 1.2;
+    color: rgb(0, 235, 219);
+    &::before {
+      width: $underScoreWidth;
+    }
+  }
+  &.active {
+    font-weight: 700;
+    color: greenyellow;
+  }
+}
+@mixin text-style($size, $color, $ff) {
+  font-size: $size;
+  list-style: none;
+  color: $color;
+  text-decoration: none;
+  font-family: $ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @if ($ff == "Lilita One", cursive) {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  } @else {
+    letter-spacing: 0px;
+    text-transform: capitalize;
+  }
+}
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 111111111111;
+  top: 0;
+  left: 0;
+  height: $nav_height;
+  background-color: transparent;
+  transition: all linear 250ms;
+  &.collapse {
+    background: $glassColor;
+    height: 10vh;
+    color: white; /* Set text color to be visible on dark background */
+    nav {
+      div.brand-container {
+        img {
+          transform: translateX(-40px);
+          scale: 0.7;
+        }
+      }
+      div.menu-container {
+        scale: 0.8;
+      }
+    }
+  }
+  &.hidden {
+    transform: translateY(-#{$nav_height});
+    nav {
+      div.menu-container {
+        ul.mobile-menu {
+          display: none !important;
+          visibility: hidden !important;
+        }
+      }
+    }
+  }
+  nav {
+    width: 100%;
+    height: 100%;
+    padding: 10px 40px;
+    @include make-flex(space-between, false);
+    div.brand-container {
+      @include make-flex(center, false);
+      gap: 10px;
+      @include text-style(20px, white, $lilita);
+      user-select: none;
+      img {
+        width: 140px;
+        height: 70px;
+      }
+    }
+    //  All Menu Container Start
+    div.menu-container {
+      width: 40%;
+      @media screen and (max-width: $responsive_width) {
+        width: auto;
+      }
+      //Menu close button
+
+      div.humberg-btn {
+        &:not(.hide) {
+          @include make-flex(center, true); //making flex
+          display: none !important; //hide button on desktop
+          @media screen and (max-width: $responsive_width) {
+            & {
+              display: flex !important;
+            }
+          }
+          width: 50px;
+          height: 40px;
+          @include text-style(18px, white, $lilita);
+          cursor: pointer;
+          transition: all linear 250ms;
+          gap: 0px;
+          span {
+            width: 60%;
+            height: 2px;
+            transition: all linear 500ms;
+            background-color: white;
+            display: block;
+            &:nth-child(1) {
+              background-color: yellow;
+              transform: translate(0, -8px);
+              &.active {
+                background-color: white;
+                transform: translate(0, 4px) rotate(45deg);
+                transform-origin: center;
+              }
+            }
+            &:nth-child(2) {
+              background-color: red;
+              &.active {
+                transform: translateX(400px);
+              }
+            }
+            &:nth-child(3) {
+              transform: translate(0, 8px);
+              &.active {
+                transform: translate(0px, 0px) rotate(315deg);
+                transform-origin: center;
+              }
+            }
+          }
+        }
+      }
+
+      // Expanded Menu CSS START
+      ul.expanded-menu {
+        &:not(.hide) {
+          @include make-flex(center, false);
+          width: 100%;
+          padding: 0 10px;
+          li {
+            $underscore_width: calc(
+              100% - 18px
+            ); // 100% - (margin-right + padding-right)
+            @include text-style(20px, white, $lilita);
+            width: 100%;
+            margin-right: 10px;
+            font-weight: 500;
+            padding: 8px;
+            text-align: center;
+            background-color: transparent;
+            @include link-hover(all linear 250ms, $underscore_width);
+            position: relative;
+            &::before {
+              content: " ";
+              position: absolute;
+              bottom: 0%;
+              left: 8px;
+              width: 0%;
+              height: 4px;
+              background-color: rgb(0, 235, 219);
+              transition: all linear 250ms;
+            }
+          }
+        }
+        @media screen and (max-width: $responsive_width) {
+          & {
+            /*expanded menu hide on mobile*/
+
+            display: none !important;
+          }
+        }
+      }
+      /*expanded menu css end*/
+      // Mobile Menu CSS Start
+
+      ul.mobile-menu {
+        &:not(.hide) {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          transition: all linear 250ms;
+          &.collapse {
+            width: 0px;
+            visibility: hidden;
+          }
+          padding: 10px 0px;
+          top: 10vh;
+          left: 0;
+          background-color: $glassColor;
+          opacity: 1;
+          backdrop-filter: blur(2px);
+          @include make-flex(center, true);
+          li {
+            display: block;
+            margin-bottom: 10px;
+            width: 60px;
+            @include text-style(19px, white, $poppins);
+            @include make-flex(center, false);
+            @include link-hover(all linear 250ms, false);
+          }
+        }
+
+        @media screen and (min-width: $responsive_width) {
+          & {
+            width: 0px;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    //main menu container end
+  } //nav end
+  .hide {
+    display: none;
+  }
+}

@@ -1,0 +1,94 @@
+$green_color_primary: rgb(18, 233, 18);
+$green_color_shade: rgba(0, 128, 0, 0.571);
+$green_color_light: rgb(188, 233, 10);
+$green_color_dark: rgb(11, 109, 11);
+
+// Base Fonts:
+$default_font: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+$poppins: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+$lilita: "Lilita One", cursive;
+$mono2: "VT323", monospace;
+$cursive2: "Berkshire Swash", cursive;
+@mixin text-style($size, $color, $ff) {
+  font-size: $size;
+  list-style: none;
+  color: $color;
+  text-decoration: none;
+  font-family: $ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @if ($ff == "Lilita One", cursive) {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  } @else {
+    letter-spacing: 0px;
+    text-transform: capitalize;
+  }
+}
+.card {
+  width: 24rem;
+  height: 26rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px 5px rgba(17, 144, 8, 0.2);
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: all 0.25s linear;
+    filter: brightness(0.9) blur(0px);
+  }
+  .cardHead {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset 0.3s 0.01s ease-out;
+    @include text-style(27px, white, $poppins);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .cardBody,
+  a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+    @include text-style(15px, white, $default_font);
+    text-align: left;
+    inset: auto auto 88px 30px;
+  }
+  a {
+    inset: auto auto 30px 30px;
+    color: inherit;
+    text-decoration: none;
+    padding: 10px 14px;
+    border: 2px solid $green_color_dark;
+    @include text-style(14px, white, $default_font);
+    &:hover {
+      background-color: $green_color_dark;
+    }
+  }
+  &:hover .cardHead {
+    inset: auto auto 240px 30px;
+    transition: inset 0.5s ease-out;
+    color: $green_color_primary;
+  }
+  &:hover .cardBody,
+  &:hover a {
+    opacity: 1;
+    transition: all 0.6s 0.1s ease-in;
+  }
+
+  &:hover img {
+    transition: all 0.3s linear;
+    opacity: 1;
+    filter: brightness(0.3) blur(5px);
+  }
+}

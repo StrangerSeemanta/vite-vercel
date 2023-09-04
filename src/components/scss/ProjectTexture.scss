@@ -1,0 +1,31 @@
+/*Project-Texture CSS Start*/
+@import "./variables&mixins";
+div.project-texture-container {
+  position: relative;
+  width: 100%;
+  height: 400vh;
+  background: transparent;
+  perspective: 2500px;
+  transform-style: preserve-3d;
+  @include make-flex(center, false);
+  .texture {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: auto;
+    @include make-flex(center, false);
+    @include text-style(22rem, transparent, $default_font);
+    font-weight: 800;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    perspective: 1200px;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    & {
+      display: none;
+    }
+  }
+}
+
+/*Project Section CSS End*/

@@ -1,0 +1,154 @@
+@import "./variables&mixins";
+.project-card-container {
+  $pcard_width: 550px;
+  $pcard_height: 250px;
+  width: $pcard_width;
+  height: $pcard_height;
+  background: rgba(9, 41, 89, 0.8);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.587),
+    8px 8px 30px rgba(0, 0, 0, 0.587);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  position: relative;
+  perspective: 2500px;
+  transform-style: preserve-3d;
+  transition: all linear 250ms !important;
+  cursor: pointer;
+  @media screen and (max-width: $breakpoint-md) {
+    & {
+      width: $pcard_width * 0.8;
+      height: $pcard_height * 0.8;
+    }
+  }
+  @media screen and (max-width: $breakpoint-sm) {
+    & {
+      width: $pcard_width * 0.7;
+      height: $pcard_height * 0.7;
+    }
+  }
+  @media screen and (max-width: $breakpoint-xs) {
+    & {
+      width: $pcard_width * 0.5;
+      height: $pcard_height * 0.5;
+    }
+  }
+  .img-holder {
+    $bgImage_src: var(--src);
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 70%;
+    z-index: 1;
+    object-fit: contain;
+    transition: all linear 350ms 0.4s;
+    padding: 0.5rem;
+    background: $bgImage_src;
+    border-radius: 20px;
+    box-shadow: inset -2px -2px 10px white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen and (max-width: $breakpoint-md) {
+      & {
+        width: 50%;
+      }
+    }
+  }
+  .projectCard-title {
+    position: absolute;
+    inset: auto auto 40% 1rem;
+    width: 40%;
+    @include text-style(180%, transparent, $lilita);
+    background: linear-gradient(45deg, #ffd700, #ff4500, #ff1493);
+    background-clip: text;
+    margin-right: 2%;
+    @include responsive-font(170%, 140%, 100%);
+    font-weight: 800;
+    transition: all linear 250ms 0.3s;
+    z-index: 11111;
+  }
+  .projectCard-body {
+    position: absolute;
+    inset: auto auto 65px 1rem;
+    @include text-style(13px, white, $default_font);
+    @include responsive-font(12px, 10px, 8px);
+    margin: 5px 0px;
+    opacity: 0;
+    transition: all linear 250ms 0.2s;
+    z-index: 11111;
+    width: 80%;
+    height: 40%;
+    @media screen and (max-width: $breakpoint-sm) {
+      & {
+        height: 25%;
+        overflow-y: hidden;
+        inset: auto auto 75px 1rem;
+      }
+    }
+  }
+  .projectCard-btn-holder {
+    position: absolute;
+    inset: auto auto 5% 1rem;
+    opacity: 0;
+    transition: all linear 250ms 0.2s;
+    z-index: 11111;
+    transform-origin: left;
+    @media screen and (max-width: $breakpoint-xs) {
+      & {
+        scale: 0.7;
+      }
+    }
+  }
+
+  &:hover {
+    & {
+      transition: all linear 250ms;
+      background: rgba(5, 28, 62, 0.6);
+      border-color: transparent;
+      border: none;
+      box-shadow: 0px 0px 17px rgba(18, 6, 37, 0.691),
+        5px 5px 10px rgba(14, 4, 30, 0.418);
+    }
+    .img-holder {
+      filter: brightness(0.5) blur(2px);
+      object-fit: cover;
+      transition: all linear 250ms 0s;
+      transform-origin: left;
+      transform: perspective(1000px) scaleX(0.95) translate3d(15%, -52%, -120px)
+        rotateY(-43deg);
+      box-shadow: inset -2px -2px 10px white, 2px 5px 20px rgb(117, 0, 241);
+    }
+    .projectCard-title {
+      inset: auto auto 72% 1rem;
+      transition: all linear 400ms 0.1s;
+      width: 100%;
+      @include text-style(24px, transparent, $lilita);
+      @include responsive-font(22px, 19px, 16px);
+
+      background: linear-gradient(to right, #d176ff 0%, #0878e7 100%);
+      background-clip: text;
+    }
+    .projectCard-body {
+      transition: all linear 250ms 0.4s;
+      inset: auto auto 25% 2rem;
+      @media screen and (max-width: $breakpoint-sm) {
+        & {
+          inset: auto auto 35% 2rem;
+        }
+      }
+      opacity: 1;
+    }
+    .projectCard-btn-holder {
+      transition: all linear 250ms 0.3s;
+      inset: auto auto 2% 2rem;
+      @media screen and (max-width: $breakpoint-sm) {
+        & {
+          inset: auto auto -2% 2rem;
+        }
+      }
+      opacity: 1;
+    }
+  }
+}

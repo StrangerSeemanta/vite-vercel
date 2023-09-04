@@ -1,0 +1,44 @@
+@mixin make-border-light($animationId) {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background: linear-gradient(
+      45deg,
+      red,
+      blue,
+      green,
+      yellow,
+      #e11d74,
+      black,
+      #ffff00,
+      #aa0000
+    );
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: #{$animationId}Lightening 25s linear infinite;
+    transition: all linear 40ms;
+  }
+
+  &::after {
+    filter: blur(25px);
+  }
+
+  @keyframes #{$animationId}Lightening {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
+}

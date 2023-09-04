@@ -1,0 +1,417 @@
+.graph-container {
+  position: relative;
+  padding: 1rem 0;
+  margin: 0 auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.graph-container div.graph-holder {
+  position: relative;
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  background: transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.507);
+  margin: 0px;
+}
+.graph-container div.graph-holder .percent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  padding: 5px;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .percent ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.graph-container div.graph-holder .percent ul li {
+  list-style: none;
+  font-size: 15px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+  height: auto;
+  background-color: rgba(42, 40, 40, 0.072);
+}
+.graph-container div.graph-holder .skill {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: calc(100% - 70px);
+  height: 100%;
+  background-color: transparent;
+  padding: 0px 10px;
+  z-index: 1111;
+  border-left: 2px solid rgba(255, 255, 255, 0.507);
+}
+.graph-container div.graph-holder .skill:hover li::before {
+  height: 100%;
+}
+.graph-container div.graph-holder .skill ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  height: 100%;
+}
+.graph-container div.graph-holder .skill li {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  transition: all linear 250ms;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.graph-container div.graph-holder .skill li:nth-child(0) {
+  background: rgba(229, 167, 191, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(0) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(0)::before {
+  background-color: rgba(229, 167, 191, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(0):hover::after {
+  opacity: 1;
+  background-color: rgba(229, 167, 191, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(1) {
+  background: rgba(52, 60, 76, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(1) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(1)::before {
+  background-color: rgba(52, 60, 76, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(1):hover::after {
+  opacity: 1;
+  background-color: rgba(52, 60, 76, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(2) {
+  background: rgba(18, 163, 10, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(2) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(2)::before {
+  background-color: rgba(18, 163, 10, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(2):hover::after {
+  opacity: 1;
+  background-color: rgba(18, 163, 10, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(3) {
+  background: rgba(237, 150, 174, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(3) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(3)::before {
+  background-color: rgba(237, 150, 174, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(3):hover::after {
+  opacity: 1;
+  background-color: rgba(237, 150, 174, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(4) {
+  background: rgba(217, 198, 204, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(4) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(4)::before {
+  background-color: rgba(217, 198, 204, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(4):hover::after {
+  opacity: 1;
+  background-color: rgba(217, 198, 204, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(5) {
+  background: rgba(159, 89, 144, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(5) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(5)::before {
+  background-color: rgba(159, 89, 144, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(5):hover::after {
+  opacity: 1;
+  background-color: rgba(159, 89, 144, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(6) {
+  background: rgba(178, 180, 227, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(6) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(6)::before {
+  background-color: rgba(178, 180, 227, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(6):hover::after {
+  opacity: 1;
+  background-color: rgba(178, 180, 227, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(7) {
+  background: rgba(160, 199, 245, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(7) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(7)::before {
+  background-color: rgba(160, 199, 245, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(7):hover::after {
+  opacity: 1;
+  background-color: rgba(160, 199, 245, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(8) {
+  background: rgba(90, 79, 77, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(8) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(8)::before {
+  background-color: rgba(90, 79, 77, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(8):hover::after {
+  opacity: 1;
+  background-color: rgba(90, 79, 77, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(9) {
+  background: rgba(232, 46, 156, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(9) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(9)::before {
+  background-color: rgba(232, 46, 156, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(9):hover::after {
+  opacity: 1;
+  background-color: rgba(232, 46, 156, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:nth-child(10) {
+  background: rgba(182, 204, 4, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  padding: 0px 3px;
+}
+.graph-container div.graph-holder .skill li:nth-child(10) span {
+  font-size: 15px;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: "Poppins", -apple-system, "Segoe UI", "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1111;
+}
+.graph-container div.graph-holder .skill li:nth-child(10)::before {
+  background-color: rgba(182, 204, 4, 0.8);
+}
+.graph-container div.graph-holder .skill li:nth-child(10):hover::after {
+  opacity: 1;
+  background-color: rgba(182, 204, 4, 0.8);
+  transform: translateX(-50%) translateY(0%);
+  rotate: 720deg;
+}
+.graph-container div.graph-holder .skill li:hover {
+  outline: 2px solid white;
+}
+.graph-container div.graph-holder .skill li::after {
+  content: attr(data-percentage);
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.571);
+  text-align: center;
+  font-size: 16px;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Berkshire Swash", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%) translateY(200%);
+  width: 80px;
+  height: 40px;
+  opacity: 0;
+  transition: all linear 250ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.graph-container div.graph-holder .skill li::before {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 0%;
+  transition: all linear 350ms;
+}/*# sourceMappingURL=ProgressStyle.css.map */

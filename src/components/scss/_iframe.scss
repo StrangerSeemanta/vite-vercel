@@ -1,0 +1,93 @@
+.iframe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.834);
+  z-index: 11111111;
+  @include make-flex(center, false);
+  @media screen and (max-width: $breakpoint-sm) {
+    & {
+      z-index: 1111111111111;
+    }
+  }
+  .iframe-title {
+    position: absolute;
+    left: 50%;
+    bottom: 4%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
+    @include text-style(250%, transparent, $mono2);
+    font-weight: 900;
+    background: linear-gradient(
+      to right,
+      rgb(202, 36, 244),
+      rgb(199, 168, 206)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    @media screen and (max-width: $breakpoint-sm) {
+      & {
+        display: none;
+      }
+    }
+  }
+  .iframe-wrapper {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border: 2px solid rgb(122, 25, 220);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      & {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .frame-loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      @include make-flex(center, false);
+      &::before {
+        content: " ";
+
+        width: 150px;
+        height: 150px;
+        background-color: transparent;
+        border: 10px solid rgba(37, 36, 36, 0.5);
+        border-radius: 50%;
+        border-top-color: rgb(122, 25, 220);
+        animation: spin cubic-bezier(0.665, 0.34, 0.44, 0.5) 1000ms infinite;
+      }
+      @keyframes spin {
+        from {
+          rotate: 0deg;
+        }
+        to {
+          rotate: 360deg;
+        }
+      }
+    }
+  }
+  .iframe-closeBtn {
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    scale: 0.7;
+  }
+}

@@ -1,0 +1,69 @@
+@import "./variables&mixins";
+
+div.btn-wrapper-default {
+  width: auto;
+  height: 40px;
+  margin: 10px 0px;
+  margin-right: 5px;
+  display: inline-flex;
+  button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    padding: 5px 10px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    @include text-style(13px, white, $default_font);
+    border: 2px rgb(120, 8, 190) solid;
+    position: relative;
+    transition: all linear 250ms;
+    &:hover {
+      & {
+        transition-delay: 500ms;
+        background: rgb(134, 24, 203);
+      }
+      &::before {
+        animation: swipe linear 400ms;
+      }
+      &::after {
+        animation: swipe linear 250ms;
+        animation-delay: 200ms;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: " ";
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: rgba(178, 71, 244, 0.919);
+      color: black;
+      @include make-flex(center, false);
+      overflow: hidden;
+      transition: all linear 250ms;
+    }
+    &::after {
+      background-color: rgb(126, 11, 202);
+    }
+
+    @keyframes swipe {
+      0% {
+        width: 0%;
+        left: 0;
+      }
+
+      50% {
+        width: 100%;
+        right: 0;
+      }
+
+      100% {
+        width: 0%;
+        right: 0;
+      }
+    }
+  }
+}
