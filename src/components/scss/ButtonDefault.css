@@ -17,20 +17,21 @@ div.btn-wrapper-default button {
   cursor: pointer;
   font-size: 13px;
   list-style: none;
-  color: white;
+  color: var(--textColor);
   text-decoration: none;
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border: 2px rgb(120, 8, 190) solid;
+  border: 2px var(--themeColor) solid;
   position: relative;
   transition: all linear 250ms;
 }
 div.btn-wrapper-default button:hover {
-  transition-delay: 500ms;
-  background: rgb(134, 24, 203);
+  transition-delay: 600ms;
+  background: var(--themeColor);
+  color: var(--afterTextColor);
 }
 div.btn-wrapper-default button:hover::before {
   animation: swipe linear 400ms;
@@ -45,8 +46,7 @@ div.btn-wrapper-default button::before, div.btn-wrapper-default button::after {
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: rgba(178, 71, 244, 0.919);
-  color: black;
+  background-color: var(--themeColor);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,8 +61,12 @@ div.btn-wrapper-default button::before, div.btn-wrapper-default button::after {
     row-gap: 3rem;
   }
 }
+div.btn-wrapper-default button::before {
+  filter: contrast(1.25);
+}
 div.btn-wrapper-default button::after {
-  background-color: rgb(126, 11, 202);
+  background-color: var(--themeColor);
+  filter: brightness(1.2) opacity(0.8);
 }
 @keyframes swipe {
   0% {

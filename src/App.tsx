@@ -4,7 +4,7 @@ import Intro from './components/Intro';
 import About from './components/About';
 import Skill from './components/Skill';
 import Projects from './components/Projects';
-
+import Contact from './Contact';
 import Loader from './Loader';
 
 import logo from "./assets/logo.png"
@@ -12,6 +12,7 @@ import './App.css';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 function App() {
 
   const links = ['Home', "About", "Skill", "Projects", "Contact"];
@@ -37,6 +38,7 @@ function App() {
         <About />
         <Skill />
         <Projects />
+        <Contact />
       </section>
       {appLoaderShow && <Loader className='fixed' />}
     </Fragment >

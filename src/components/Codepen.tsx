@@ -32,7 +32,7 @@ function Codepen({ animate, children }: Props) {
         }
 
 
-    }, [animate])
+    }, [animate, children, isPlayin])
 
 
 

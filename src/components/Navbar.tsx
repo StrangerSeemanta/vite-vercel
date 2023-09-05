@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useRef } from "react";
 import "./scss/Navbar.css"
-
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import EyeOffAnime from "./../assets/lotties/eyeOff.json";
 interface Props {
     logo?: {
         src: string;
@@ -14,12 +15,33 @@ function Navbar({ brand_name, links, onSelected, logo }: Props) {
     // Hooks
     const [activeLink, setActiveLink] = useState(0)
     const [mobileMenuVisibility, setmobileMenuVisibility] = useState(false);
-
+    const [isCollapsed, SetCollapseStat] = useState(false);
+    const [isNavHide, setNavHideStat] = useState(false);
     //using NavCollapseEffect
+    const header = useRef<HTMLElement | null>(null);
+    const eyeOff = useRef<LottieRefCurrentProps>(null);
     useEffect(() => {
-        const navbar = new NavCollapseEffect('header');
-        navbar.init()
-    })
+        const scrollArr: number[] = [];
+
+        window.addEventListener('scroll', () => {
+            scrollArr.push(window.scrollY);
+            if (window.scrollY === 0) {
+                // header.current?.classList.remove('collapse', 'hidden'); //expand Navbar
+                SetCollapseStat(false);
+            }
+            if (scrollArr[scrollArr.length - 1] > scrollArr[scrollArr.length - 2]) {
+                // header.current?.classList.add('hidden', 'collapse'); //hide navbar
+                SetCollapseStat(true);
+                setNavHideStat(true)
+
+
+            } else if (scrollArr[scrollArr.length - 1] < scrollArr[scrollArr.length - 2]) {
+                // header.current?.classList.remove('hidden'); //show Navbar
+                setNavHideStat(false)
+            }
+
+        });
+    }, [header])
     // jsx li elements to reuse
     const linkItems = links.map((item, index) => (
         <li key={index} className={
@@ -31,14 +53,18 @@ function Navbar({ brand_name, links, onSelected, logo }: Props) {
             }}>
             {item}
         </li>))
+
     return (
         <Fragment>
-            <header>
+            <header ref={header} className={isCollapsed ? (isNavHide ? "hidden collapse" : "collapse") : " "}>
                 <nav>
                     <div className="brand-container">
                         <img src={logo?.src} alt={logo?.altText} />
                         <h1 className="brand-name">{brand_name}</h1>
                     </div>
+                    {isCollapsed && <div>
+                        <Lottie title="Hide Navbar" onComplete={() => { setNavHideStat(true) }} onClick={() => { eyeOff.current?.stop(); eyeOff.current?.play(); }} className="eyeoff" id="eyeoff" lottieRef={eyeOff} animationData={EyeOffAnime} autoplay={false} loop={false} />
+                    </div>}
                     <div className="menu-container">
                         {/*Mobile Menu trigger button  */}
                         <div className="humberg-btn" onClick={() => {
@@ -69,47 +95,7 @@ function Navbar({ brand_name, links, onSelected, logo }: Props) {
 
     )
 }
-class NavCollapseEffect {
-    private navbar: HTMLElement;
 
-    constructor(navSelector: string) {
-        this.navbar = document.querySelector(navSelector) as HTMLElement;
-        this.show = this.show.bind(this);
-        this.hide = this.hide.bind(this);
-        this.expand = this.expand.bind(this);
-        this.init = this.init.bind(this);
-    }
-
-    show() {
-        this.navbar.classList.remove('hidden');
-    }
-
-    hide() {
-        this.navbar.classList.add('hidden', 'collapse');
-
-    }
-
-    expand() {
-        this.navbar.classList.remove('collapse', 'hidden');
-    }
-
-    init() {
-        const scrollArr: number[] = [];
-
-        window.addEventListener('scroll', () => {
-            scrollArr.push(window.scrollY);
-            if (window.scrollY === 0) {
-                this.expand();
-            }
-            if (scrollArr[scrollArr.length - 1] > scrollArr[scrollArr.length - 2]) {
-                this.hide();
-            } else if (scrollArr[scrollArr.length - 1] < scrollArr[scrollArr.length - 2]) {
-                this.show();
-            }
-
-        });
-    }
-}
 
 export default Navbar;
 

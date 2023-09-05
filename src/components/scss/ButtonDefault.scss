@@ -14,14 +14,15 @@ div.btn-wrapper-default {
     font-weight: 700;
     border: none;
     cursor: pointer;
-    @include text-style(13px, white, $default_font);
-    border: 2px rgb(120, 8, 190) solid;
+    @include text-style(13px, var(--textColor), $default_font);
+    border: 2px var(--themeColor) solid;
     position: relative;
     transition: all linear 250ms;
     &:hover {
       & {
-        transition-delay: 500ms;
-        background: rgb(134, 24, 203);
+        transition-delay: 600ms;
+        background: var(--themeColor);
+        color: var(--afterTextColor);
       }
       &::before {
         animation: swipe linear 400ms;
@@ -39,14 +40,18 @@ div.btn-wrapper-default {
       height: 100%;
       position: absolute;
       top: 0;
-      background-color: rgba(178, 71, 244, 0.919);
-      color: black;
+      background-color: var(--themeColor);
       @include make-flex(center, false);
       overflow: hidden;
       transition: all linear 250ms;
     }
+    &::before {
+      filter: contrast(1.25);
+    }
+
     &::after {
-      background-color: rgb(126, 11, 202);
+      background-color: var(--themeColor);
+      filter: brightness(1.2) opacity(0.8);
     }
 
     @keyframes swipe {
