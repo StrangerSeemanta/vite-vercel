@@ -1,0 +1,133 @@
+section.contact {
+  $form-bg: #f8f4e5;
+  $form-border: #f45702;
+  $form-shadow: #dfae4b;
+  $form-focus: #6bd4b1;
+  $font-size: 12pt;
+  $font-face: "Spartan";
+  $font-color: #2a293e;
+
+  position: relative;
+  min-height: 200vh;
+  width: 100%;
+  background: url("./assets/contactBG.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 2rem 0px;
+  @media screen and (max-width: $breakpoint-md) {
+    & {
+      height: 300vh;
+    }
+  }
+
+  .title {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 50%;
+    @include text-style(300%, dodgerblue, $lilita);
+    @include responsive-font(280%, 250%, 200%);
+    text-align: center;
+    font-weight: 700;
+  }
+  .main-layout {
+    height: auto;
+    margin-top: 10vh;
+    width: 100%;
+    background-color: transparent;
+    @include make-flex(space-around, false);
+    .layout-tab {
+      width: 500px;
+      height: 90vh !important;
+
+      position: relative;
+      background-color: $form-bg;
+      box-shadow: 5px 5px 10px $form-shadow;
+      @media screen and (max-width: $breakpoint-sm) {
+        & {
+          width: 400px;
+          height: 80vh;
+        }
+      }
+      @media screen and (max-width: $breakpoint-xs) {
+        & {
+          width: 280px;
+          height: 60vh;
+        }
+      }
+      .content-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2rem 0px;
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        h1 {
+          @include text-style(200%, $form-border, $poppins);
+          @include responsive-font(170%, 130%, 130%);
+          letter-spacing: 0px;
+          font-weight: 700;
+        }
+      }
+    }
+    .social-tab {
+      .social-anime-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        div#socialAnime {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .social-icons {
+        @include make-flex(center, false);
+        @media screen and (max-width: $breakpoint-md) {
+          & {
+            flex-direction: row !important;
+          }
+        }
+        @media screen and (max-width: $breakpoint-sm) {
+          & {
+            flex-direction: row !important;
+            width: 200px;
+          }
+        }
+        gap: 5px;
+        width: 300px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.589);
+        border-radius: 4px;
+        border-left: 3px solid $form-border;
+        padding: 0 10px;
+        .lottieSocial {
+          width: 100px;
+          height: 100px;
+          cursor: pointer;
+          filter: brightness(0.9);
+          transition: all linear 250ms;
+          &:hover {
+            scale: 1.1;
+            filter: brightness(1.05);
+          }
+        }
+        #fbAnimation {
+          width: 80px;
+          height: 80px;
+        }
+        #igAnimation {
+          width: 60px !important;
+          height: 60px !important;
+        }
+        #fiverrAnimation {
+          width: 80px !important;
+          height: 80px !important;
+        }
+      }
+    }
+  }
+}

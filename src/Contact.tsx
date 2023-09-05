@@ -7,6 +7,7 @@ import SocialAnime from "./assets/lotties/social.json";
 import SocialTree from "./assets/lotties/socialTree.json";
 import EmailSentSuccess from "./assets/lotties/emailSentSuccess.json";
 import Button from "./components/Common/Button";
+import EmailAnime from "./assets/lotties/emailAnime.json"
 import { RefObject, useRef, useState } from "react";
 
 function Contact() {
@@ -18,9 +19,11 @@ function Contact() {
     const socialAnime = useRef<LottieRefCurrentProps>(null);
     const socialTree = useRef<LottieRefCurrentProps>(null);
     const emailSentSuccess = useRef<LottieRefCurrentProps>(null);
+    const emailAnime = useRef<LottieRefCurrentProps>(null);
 
     // hooks
     const [showEmailAnime, SetEmailAnimeVisible] = useState(false);
+    const [lottieComplete, setLottieStat] = useState(false);
 
     const LottiePlay = (lottieRef: RefObject<LottieRefCurrentProps>, speed?: number) => {
         LottieStop(lottieRef);
@@ -60,6 +63,14 @@ function Contact() {
                     <div className="layout-tab">
                         <div className="content-holder">
                             <h1>Send Me a mail</h1>
+                            <Lottie lottieRef={emailAnime} animationData={EmailAnime} style={{ width: "100%", height: "40vh" }}
+                                onComplete={() => {
+                                    lottieComplete ? emailAnime.current?.playSegments([26, 56], true) : emailAnime.current?.playSegments([56, 26], true);
+                                    emailAnime.current?.setSpeed(0.6);
+
+                                    setLottieStat(!lottieComplete)
+                                }
+                                } loop={false} />
                             {showEmailAnime ?
                                 <Lottie onComplete={handleMailBtnClick} lottieRef={emailSentSuccess} autoplay={true} loop={false} style={{ width: "220px", height: "110px" }} animationData={EmailSentSuccess} />
                                 :
