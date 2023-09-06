@@ -43,10 +43,10 @@
   -o-object-fit: contain;
      object-fit: contain;
   transition: all linear 350ms 0.4s;
-  padding: 0.5rem;
+  padding: 0.9rem;
   background: var(--src);
   border-radius: 20px;
-  box-shadow: inset -2px -2px 10px white;
+  box-shadow: inset -2px -2px 10px white, inset -3px -3px 10px rgb(6, 6, 6);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -160,7 +160,7 @@
   transition: all linear 250ms 0s;
   transform-origin: left;
   transform: perspective(1000px) scaleX(0.95) translate3d(15%, -52%, -120px) rotateY(-43deg);
-  box-shadow: inset -2px -2px 10px white, 2px 5px 20px rgb(117, 0, 241);
+  box-shadow: inset -2px -2px 10px white, inset -3px -3px 10px rgb(6, 6, 6), 4px 7px 30px rgb(117, 0, 241);
 }
 .project-card-container:hover .projectCard-title {
   inset: auto auto 72% 1rem;
