@@ -70,7 +70,7 @@ function Contact() {
                                 <Lottie onClick={() => { window.open(" https://www.fiverr.com/shuvosarker933") }} onMouseEnter={() => { LottiePlay(fiverrRef, 3) }} lottieRef={fiverrRef} autoplay={false} loop={false} animationData={FiverrAnimation} id="fiverrAnimation" className="lottieSocial" />
 
                                 {/* Stack Overflows Icon */}
-                                <Lottie onClick={() => { window.open(" https://www.fiverr.com/shuvosarker933") }} onMouseEnter={() => { LottiePlay(stackOverflowRef, 1.4) }} lottieRef={stackOverflowRef} autoplay={true} loop={false} animationData={StackOverFlowIco} id="sfAnimation" className="lottieSocial" />
+                                <Lottie onClick={() => { window.open(" https://stackoverflow.com/users/20337153/shuvo-sarker") }} onMouseEnter={() => { LottiePlay(stackOverflowRef, 1.4) }} lottieRef={stackOverflowRef} autoplay={true} loop={false} animationData={StackOverFlowIco} id="sfAnimation" className="lottieSocial" />
 
                             </div>
                         </div>
