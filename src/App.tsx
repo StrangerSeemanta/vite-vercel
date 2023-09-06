@@ -4,7 +4,7 @@ import Intro from './components/Intro';
 import About from './components/About';
 import Skill from './components/Skill';
 import Projects from './components/Projects';
-import Contact from './Contact';
+import Contact from './components/Contact';
 import Loader from './Loader';
 
 import logo from "./assets/logo.png"

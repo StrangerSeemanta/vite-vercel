@@ -1,16 +1,16 @@
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import FacebookAnimation from "./assets/lotties/FacebookIco.json";
-import InstaAnimation from "./assets/lotties/InstaIco.json";
-import GithubAnimation from "./assets/lotties/GithubIco.json";
-import FiverrAnimation from "./assets/lotties/FiverrIco.json";
-import StackOverFlowIco from "./assets/lotties/stackOverflowIco.json"
-import SocialAnime from "./assets/lotties/social.json";
-import SocialTree from "./assets/lotties/socialTree.json";
-import EmailSentSuccess from "./assets/lotties/emailSentSuccess.json";
-import Button from "./components/Common/Button";
-import EmailAnime from "./assets/lotties/emailAnime.json"
+import FacebookAnimation from "../assets/lotties/FacebookIco.json";
+import InstaAnimation from "../assets/lotties/InstaIco.json";
+import GithubAnimation from "../assets/lotties/GithubIco.json";
+import FiverrAnimation from "../assets/lotties/FiverrIco.json";
+import StackOverFlowIco from "../assets/lotties/stackOverflowIco.json"
+import SocialAnime from "../assets/lotties/social.json";
+import SocialTree from "../assets/lotties/socialTree.json";
+import EmailSentSuccess from "../assets/lotties/emailSentSuccess.json";
+import Button from "./Common/Button";
+import EmailAnime from "../assets/lotties/emailAnime.json"
 
-import GmailIcon from "./assets/lotties/gmailIcon.json"
+import GmailIcon from "../assets/lotties/gmailIcon.json"
 
 import { RefObject, useRef, useState } from "react";
 
