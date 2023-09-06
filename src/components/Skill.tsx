@@ -38,7 +38,7 @@ function Skill() {
             "Adobe..CC": 70,
             "Git": 85,
             "Figma": 80,
-            "Zoomla": 50,
+            "Zoomla": 30,
             "Wix": 70
         }
     }
